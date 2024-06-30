@@ -9,7 +9,7 @@ export const FavoriteDropdown = () => {
     return (
         <>
             <div className="btn-group me-5">
-                <button className="btn btn-primary dropdown-toggle position-relative" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                <button className="btn btn-warning dropdown-toggle position-relative" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                     Favoritos
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {favorites.length}
@@ -21,7 +21,7 @@ export const FavoriteDropdown = () => {
                             <li className="d-flex justify-content-between align-items-center px-2" key={index}>
                                 {favorites[index].properties.name}
                                 <a href="#" onClick={() => { actions.deleteFavorite(item, index) }}>
-                                    <i className="bi bi-trash"></i>
+                                    <i class="fa-solid fa-trash"></i>
                                 </a>
                             </li>
 

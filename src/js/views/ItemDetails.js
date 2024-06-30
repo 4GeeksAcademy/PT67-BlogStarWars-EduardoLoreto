@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
 import { Context } from "../store/appContext.js";
 
 import "../../styles/home.css";
@@ -175,7 +174,7 @@ export const ItemDetails = () => {
 
 
             <Link to={"/"}>
-                < button className="btn btn-primary ms-5">Home</button>
+                < button className="btn btn-warning ms-5"> Home </button>
             </Link>
         </>
     )
