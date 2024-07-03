@@ -8,7 +8,7 @@ export const Home = () => {
     const { people, vehicles, planets } = store;
 
     return (
-        <div className="container-fluid d-flex justify-content-center text-center mb-5 gap-5 py-3 mx-5">
+        <div className="container-fluid justify-content-center text-center mb-5 gap-5 py-3 mx-5">
 
             <div>
                 <div className="text-light h1"><strong>Characters</strong></div>

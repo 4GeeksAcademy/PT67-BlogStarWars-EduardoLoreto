@@ -7,3 +7,18 @@
     width: 18rem;
     height: 18rem;
 }
+
+.carousel .carousel-control-prev {
+    font-weight: bold;
+    position: absolute;
+    left: 35%;
+    z-index: none;      
+  }
+  
+  .carousel .carousel-control-next {    
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    z-index: none;
+    
+  }

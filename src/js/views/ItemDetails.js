@@ -12,13 +12,11 @@ export const ItemDetails = () => {
 
     return (
         <>
-            {params.type == "person" && people.map((item, index) => {
+            {params.type == "character" && people.map((item, index) => {
                 const { properties } = item
                 if (item.uid == params.uid) {
                     return (
                         <>
-
-                            
 
                             <div className="container m-5" key={index}>
                                 <div className="card mb-4">
