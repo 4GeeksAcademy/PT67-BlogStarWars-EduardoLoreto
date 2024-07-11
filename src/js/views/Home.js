@@ -8,8 +8,7 @@ export const Home = () => {
     const { people, vehicles, planets } = store;
 
     return (
-        <div className="container-fluid justify-content-center text-center mb-5 gap-5 py-3 mx-5">
-
+        <div className="container-fluid d-flex justify-content-center text-center mb-5 gap-5 py-3 mx-5 w-100 d-block">
             <div>
                 <div className="text-light h1"><strong>Characters</strong></div>
                 <div id="charactersCarousel" className="carousel slide" data-bs-ride="carousel">

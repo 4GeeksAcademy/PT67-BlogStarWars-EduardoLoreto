@@ -1,35 +1,39 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
-
+import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 export const FavoriteDropdown = () => {
-    const { store, actions } = useContext(Context)
-    const { favorites } = store
+    const { store, actions } = useContext(Context);
+    const { favorites } = store;
 
     return (
-        <>
-            <div className="btn-group me-5">
-                <button className="btn btn-warning dropdown-toggle position-relative" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                    Favoritos
-                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {favorites.length}
-                    </span>
-                </button>
-                <ul className="dropdown-menu dropdown-menu-end dropdwon-menu-lg-start">
-                    {favorites.length == 0 ? <p className="text-center">... Empty</p> : favorites.map((item, index) => {
+        <div className="btn-group me-5">
+            <button className="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                Favorite
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {favorites.length}
+                </span>
+            </button>
+            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                {favorites.length === 0 ? (
+                    <p className="text-center">... Empty</p>
+                ) : (
+                    favorites.map((item, index) => {
+                        const { type, uid, properties } = item;
                         return (
-                            <li className="d-flex justify-content-between align-items-center px-2" key={index}>
-                                {favorites[index].properties.name}
+                            <li className="d-flex justify-content-center align-items-center px-2" key={index}>
+                                <Link to={`learn/${type}/${uid}`} className="dropdown-item">
+                                    {properties.name}
+                                </Link>
                                 <a href="#" onClick={() => { actions.deleteFavorite(item, index) }}>
-                                    <i class="fa-solid fa-trash"></i>
+                                    <i className="fa-solid fa-trash"></i>
                                 </a>
                             </li>
-
-                        )
+                        );
                     })
-                    }
-                </ul>
-            </div>
-        </>
-    )
-}
+                )}
+            </ul>
+        </div>
+    );
+};
